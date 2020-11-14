@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <vector>
 
 using namespace std;
 
@@ -15,21 +14,13 @@ using namespace std;
  * */
 
 int main(int argc, char* argv[]) {
-    vector<string> vec;          // 好像必须用个vector
     ifstream file(argv[1]);
     string temp;
     if (!file.is_open()) {
         cout << "未成功打开文件" << endl;
     }
-    while (getline(file, temp)) {
-        vec.push_back(temp);
-    }
-//    char temp;
-//    while (file >> temp) {      // 这样能过，直接输出每次的char有的用例就不行
-//        vec.push_back(temp);
-//    }
-    for (auto it = vec.begin(); it != vec.end(); it++) {
-        cout << *it << endl;
+    while (getline(file, temp)) {     // 每次输出string可以，char就不行，不知道为啥
+        cout << temp << endl;
     }
     return 0;
 }
