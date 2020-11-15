@@ -33,9 +33,9 @@ ANNOTATE_SINGLE "//".*"\n"
 ANNOTATE_MULTI  "/*"([^\*]|(\*)*[^\*/])*(\*)*"*/"
 DIGIT           [0-9]
 LETTER          [_A-Za-z]
-INT		        0|([1-9]{DIGIT}*)
-OCT		        0([0-7]+)
-HEX		        0(x|X)[0-9a-fA-F]+
+INT             0|([1-9]{DIGIT}*)
+OCT             0([0-7]+)
+HEX             0(x|X)[0-9a-fA-F]+
 FLOAT	        {INT}\.{DIGIT}+
 SNFLOAT         {DIGIT}*\.{DIGIT}*[Ee][+-]?{DIGIT}+
 ID              ({LETTER})({LETTER}|{DIGIT})*
@@ -91,8 +91,8 @@ RC              "}"
                     }
                   }
 {INT}             { fprintf(stdout, "INT %s at Line %d.\n", yytext, line_number); }
-{OCT}  		      { fprintf(stdout, "INT %d at Line %d.\n", strtol(yytext, &ptr, 8), line_number); }
-{HEX}	 	      { fprintf(stdout, "INT %d at Line %d.\n", strtol(yytext, &ptr, 16), line_number); }
+{OCT}             { fprintf(stdout, "INT %d at Line %d.\n", strtol(yytext, &ptr, 8), line_number); }
+{HEX}             { fprintf(stdout, "INT %d at Line %d.\n", strtol(yytext, &ptr, 16), line_number); }
 {FLOAT}	          { fprintf(stdout, "FLOAT %f at Line %d.\n", atof(yytext), line_number); }
 {SNFLOAT}         { fprintf(stdout, "FLOAT %f at Line %d.\n", atof(yytext), line_number); }
 {ID}              { fprintf(stdout, "ID %s at Line %d.\n", yytext, line_number); }
