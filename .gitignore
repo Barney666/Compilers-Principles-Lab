@@ -2,4 +2,5 @@ cmake-build-debug
 CMakeLists.txt
 .DS_Store
 .idea
+.vscode
 Lab1/181250104.md
