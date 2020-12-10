@@ -96,7 +96,7 @@ ParamDec:           Specifier VarDec                        { $$ = createNode(@$
     ; 
 // Statements
 CompSt:             LC DefList StmtList RC                  { $$ = createNode(@$.first_line, "CompSt", NULL); addChild($$,$1); addChild($$,$2); addChild($$,$3); addChild($$,$4); }
-    |               LC error RC                              { syntax_error = 1; }
+    |               LC error RC                             { syntax_error = 1; }
     ; 
 StmtList:           Stmt StmtList                           { $$ = createNode(@$.first_line, "StmtList", NULL); addChild($$,$1); addChild($$,$2); }
     |                                                       { $$ = NULL; }
