@@ -353,7 +353,7 @@ void DefList(Node* node){
     }
 }
 
-void Def(Node* node){   // 这的Declist和Dec其实可以拆分出去的
+void Def(Node* node){   // TODO 这的Declist和Dec其实可以拆分出去的
     // Def -> Specifier DecList SEMI
     Type* specifier_type = Specifier(node->children[0]);
     Node* Declist_node = node->children[1];

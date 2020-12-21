@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "AST_Node.h"
-//#include "syntax.tab.h"
 
 using namespace std;
 
